@@ -62,7 +62,7 @@ namespace TwitchPlugin
 
 		public string Author
 		{
-			get { return "Epix"; }
+			get { return "Epix (translated by alpine)"; }
 		}
 
 		public Version Version
