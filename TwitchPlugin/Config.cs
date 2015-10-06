@@ -11,7 +11,7 @@ namespace TwitchPlugin
 	{
 		private static Config _instance;
 
-		public static string[] TimeFrames { get { return new[] {"today", "week", "season", "total"}; } }
+		public static string[] TimeFrames { get { return new[] {"heute", "woche", "saison", "insgesamt"}; } }
 
 		public Config()
 		{
@@ -22,25 +22,25 @@ namespace TwitchPlugin
 			ChatCommandAllDecks = true;
 			ChatCommandHdt = true;
 			ChatCommandStatsGeneral = true;
-			ChatCommandStatsDefault = "today";
+			ChatCommandStatsDefault = "heute";
 			ChatCommandStatsToday = true;
 			ChatCommandStatsWeek = true;
 			ChatCommandStatsSeason = true;
 			ChatCommandStatsTotal = true;
 			ChatCommandArenaGeneral = true;
-			ChatCommandArenaDefault = "today";
+			ChatCommandArenaDefault = "heute";
 			ChatCommandArenaToday = true;
 			ChatCommandArenaWeek = true;
 			ChatCommandArenaSeason = true;
 			ChatCommandArenaTotal = true;
 			ChatCommandBestDeckGeneral = true;
-			ChatCommandBestDeckDefault = "today";
+			ChatCommandBestDeckDefault = "heute";
 			ChatCommandBestDeckToday = true;
 			ChatCommandBestDeckWeek = true;
 			ChatCommandBestDeckSeason = true;
 			ChatCommandBestDeckTotal = true;
 			ChatCommandMostPlayedGeneral = true;
-			ChatCommandMostPlayedDefault = "today";
+			ChatCommandMostPlayedDefault = "heute";
 			ChatCommandMostPlayedToday = true;
 			ChatCommandMostPlayedWeek = true;
 			ChatCommandMostPlayedSeason = true;

@@ -49,7 +49,7 @@
                             <Run>Played {#games} games with {#used decks} decks. Total stats: {win-loss}</Run>
                             <LineBreak />
                             <Bold>timeframes:</Bold>
-                            <Run>today, week, season, total</Run>
+                            <Run>heute, woche, saison, insgesamt</Run>
                         </TextBlock>
                     </GroupBox>
                     <GroupBox Header="!arena {timeframe}">
@@ -59,7 +59,7 @@
                             <Run>Best arena run {timeframe}: {win-loss} with {classes}</Run>
                             <LineBreak />
                             <Bold>timeframes:</Bold>
-                            <Run>today, week, season, total</Run>
+                            <Run>heute, woche, saison, insgesamt</Run>
                         </TextBlock>
                     </GroupBox>
                     <GroupBox Header="!bestdeck {timeframe}">
@@ -69,7 +69,7 @@
                             <Run>Best deck {timeframe}: "{deckname}", Winrate: {win%} ({win-loss}), Decklist: {url}</Run>
                             <LineBreak />
                             <Bold>timeframes:</Bold>
-                            <Run>today, week, season, total</Run>
+                            <Run>heute, woche, saison, insgesamt</Run>
                         </TextBlock>
                     </GroupBox>
                     <GroupBox Header="!mostplayed {timeframe}">
@@ -79,7 +79,7 @@
                             <Run>Most played deck {timeframe}: "{deckname}", Winrate: {win%} ({win-loss}), Decklist: {url}</Run>
                             <LineBreak />
                             <Bold>timeframes:</Bold>
-                            <Run>today, week, season, total</Run>
+                            <Run>heute, woche, saison, insgesamt</Run>
                         </TextBlock>
                     </GroupBox>
                 </StackPanel>

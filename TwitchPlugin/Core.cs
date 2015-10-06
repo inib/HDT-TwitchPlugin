@@ -25,30 +25,30 @@ namespace TwitchPlugin
 			AddCommand("alldecks", ChatCommands.AllDecksCommand, "ChatCommandAllDecks");
 			AddCommand("hdt", ChatCommands.HdtCommand, "ChatCommandHdt");
 			AddCommand("stats", () => ChatCommands.StatsCommand(Config.Instance.ChatCommandStatsDefault), "ChatCommandStatsGeneral");
-			AddCommand("stats today", () => ChatCommands.StatsCommand("today"), "ChatCommandStatsToday", "ChatCommandStatsGeneral");
-			AddCommand("stats week", () => ChatCommands.StatsCommand("week"), "ChatCommandStatsWeek", "ChatCommandStatsGeneral");
-			AddCommand("stats season", () => ChatCommands.StatsCommand("season"), "ChatCommandStatsSeason", "ChatCommandStatsGeneral");
-			AddCommand("stats total", () => ChatCommands.StatsCommand("total"), "ChatCommandStatsTotal", "ChatCommandStatsGeneral");
+			AddCommand("stats heute", () => ChatCommands.StatsCommand("heute"), "ChatCommandStatsToday", "ChatCommandStatsGeneral");
+			AddCommand("stats woche", () => ChatCommands.StatsCommand("woche"), "ChatCommandStatsWeek", "ChatCommandStatsGeneral");
+			AddCommand("stats saison", () => ChatCommands.StatsCommand("saison"), "ChatCommandStatsSeason", "ChatCommandStatsGeneral");
+			AddCommand("stats insgesamt", () => ChatCommands.StatsCommand("insgesamt"), "ChatCommandStatsTotal", "ChatCommandStatsGeneral");
 			AddCommand("arena", () => ChatCommands.ArenaCommand(Config.Instance.ChatCommandArenaDefault), "ChatCommandArenaGeneral");
-			AddCommand("arena today", () => ChatCommands.ArenaCommand("today"), "ChatCommandArenaToday", "ChatCommandArenaGeneral");
-			AddCommand("arena week", () => ChatCommands.ArenaCommand("week"), "ChatCommandArenaWeek", "ChatCommandArenaGeneral");
-			AddCommand("arena season", () => ChatCommands.ArenaCommand("season"), "ChatCommandArenaSeason", "ChatCommandArenaGeneral");
-			AddCommand("arena total", () => ChatCommands.ArenaCommand("total"), "ChatCommandArenaTotal", "ChatCommandArenaGeneral");
+			AddCommand("arena heute", () => ChatCommands.ArenaCommand("heute"), "ChatCommandArenaToday", "ChatCommandArenaGeneral");
+			AddCommand("arena woche", () => ChatCommands.ArenaCommand("woche"), "ChatCommandArenaWeek", "ChatCommandArenaGeneral");
+			AddCommand("arena saison", () => ChatCommands.ArenaCommand("saison"), "ChatCommandArenaSeason", "ChatCommandArenaGeneral");
+			AddCommand("arena insgesamt", () => ChatCommands.ArenaCommand("insgesamt"), "ChatCommandArenaTotal", "ChatCommandArenaGeneral");
 			AddCommand("bestdeck", () => ChatCommands.BestDeckCommand(Config.Instance.ChatCommandBestDeckDefault), "ChatCommandBestDeckGeneral");
-			AddCommand("bestdeck today", () => ChatCommands.BestDeckCommand("today"), "ChatCommandBestDeckToday", "ChatCommandBestDeckGeneral");
-			AddCommand("bestdeck week", () => ChatCommands.BestDeckCommand("week"), "ChatCommandBestDeckWeek", "ChatCommandBestDeckGeneral");
-			AddCommand("bestdeck season", () => ChatCommands.BestDeckCommand("season"), "ChatCommandBestDeckSeason",
+			AddCommand("bestdeck heute", () => ChatCommands.BestDeckCommand("heute"), "ChatCommandBestDeckToday", "ChatCommandBestDeckGeneral");
+			AddCommand("bestdeck woche", () => ChatCommands.BestDeckCommand("woche"), "ChatCommandBestDeckWeek", "ChatCommandBestDeckGeneral");
+			AddCommand("bestdeck saison", () => ChatCommands.BestDeckCommand("saison"), "ChatCommandBestDeckSeason",
 			           "ChatCommandBestDeckGeneral");
-			AddCommand("bestdeck total", () => ChatCommands.BestDeckCommand("total"), "ChatCommandBestDeckTotal", "ChatCommandBestDeckGeneral");
+			AddCommand("bestdeck insgesamt", () => ChatCommands.BestDeckCommand("insgesamt"), "ChatCommandBestDeckTotal", "ChatCommandBestDeckGeneral");
 			AddCommand("mostplayed", () => ChatCommands.MostPlayedCommand(Config.Instance.ChatCommandMostPlayedDefault),
 			           "ChatCommandMostPlayedGeneral");
-			AddCommand("mostplayed today", () => ChatCommands.MostPlayedCommand("today"), "ChatCommandMostPlayedToday",
+			AddCommand("mostplayed heute", () => ChatCommands.MostPlayedCommand("heute"), "ChatCommandMostPlayedToday",
 			           "ChatCommandMostPlayedGeneral");
-			AddCommand("mostplayed week", () => ChatCommands.MostPlayedCommand("week"), "ChatCommandMostPlayedWeek",
+			AddCommand("mostplayed woche", () => ChatCommands.MostPlayedCommand("woche"), "ChatCommandMostPlayedWeek",
 			           "ChatCommandMostPlayedGeneral");
-			AddCommand("mostplayed season", () => ChatCommands.MostPlayedCommand("season"), "ChatCommandMostPlayedSeason",
+			AddCommand("mostplayed saison", () => ChatCommands.MostPlayedCommand("saison"), "ChatCommandMostPlayedSeason",
 			           "ChatCommandMostPlayedGeneral");
-			AddCommand("mostplayed total", () => ChatCommands.MostPlayedCommand("total"), "ChatCommandMostPlayedTotal",
+			AddCommand("mostplayed insgesamt", () => ChatCommands.MostPlayedCommand("insgesamt"), "ChatCommandMostPlayedTotal",
 			           "ChatCommandMostPlayedGeneral");
 		}
 
@@ -84,7 +84,7 @@ namespace TwitchPlugin
 			{
 				_irc.JoinChannel(Config.Instance.Channel);
 				_irc.OnChatMsg += HandleChatMessage;
-				Send("Hi! (Hearthstone Deck Tracker connected)");
+				Send("Servus! (Hearthstone Deck Tracker connected)");
 			}
 			return success;
 		}
@@ -105,7 +105,7 @@ namespace TwitchPlugin
 		{
 			if(_irc != null && _irc.Connected)
 			{
-				Send("Bye! (Hearthstone Deck Tracker disconnected)");
+				Send("Wiederschaun! (Hearthstone Deck Tracker disconnected)");
 				_irc.LeaveChannel(Config.Instance.Channel);
 				_irc.Quit();
 			}

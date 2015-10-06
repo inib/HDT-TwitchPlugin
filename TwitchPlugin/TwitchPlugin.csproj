@@ -30,15 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HearthstoneDeckTracker">
-      <HintPath>..\..\..\..\Visual Studio 2012\Projects\Hearthstone Deck Tracker\Hearthstone Deck Tracker\bin\Debug\HearthstoneDeckTracker.exe</HintPath>
+    <Reference Include="Hearthstone Deck Tracker">
+      <HintPath>C:\Users\Korbinian\Desktop\HSDT\Hearthstone Deck Tracker.exe</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro">
-      <HintPath>..\..\..\..\Visual Studio 2012\Projects\Hearthstone Deck Tracker\Hearthstone Deck Tracker\bin\Debug\MahApps.Metro.dll</HintPath>
+      <HintPath>C:\Users\Korbinian\Desktop\HSDT\MahApps.Metro.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Visual Studio 2012\Projects\Hearthstone Deck Tracker\Hearthstone Deck Tracker\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\Korbinian\Desktop\HSDT\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -82,7 +81,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(TargetDir)TwitchPlugin.dll" "C:\Users\Alex\Documents\Visual Studio 2012\Projects\Hearthstone Deck Tracker\Hearthstone Deck Tracker\bin\Debug\Plugins"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(TargetDir)TwitchPlugin.dll" "C:\Users\Korbinian\Desktop\HSDT\Plugins"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
