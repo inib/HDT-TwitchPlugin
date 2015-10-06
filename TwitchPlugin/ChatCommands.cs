@@ -1,7 +1,11 @@
 ﻿#region
 using System;
 using System.Linq;
+<<<<<<< HEAD
+using System.Threading.Tasks;
+=======
 using System.Globalization;
+>>>>>>> german
 using Hearthstone_Deck_Tracker;
 using Hearthstone_Deck_Tracker.Enums;
 using Hearthstone_Deck_Tracker.Hearthstone;
@@ -45,7 +49,12 @@ namespace TwitchPlugin
 
         public static void DeckCommand()
         {
-            var deck = DeckList.Instance.ActiveDeck;
+            var deck = DeckList.Instance.ActiveDeckVersion;
+			if(deck == null)
+			{
+				Core.Send("No active deck.");
+				return;
+			}
             if (deck.IsArenaDeck)
             {
                 Core.Send(string.Format("Aktuelle Arena ({0}): {1}", deck.Class, deck.WinLossString));
@@ -226,7 +235,7 @@ namespace TwitchPlugin
             }
         }
 
-        public static void OnInMenu()
+        public static async void OnInMenu()
         {
             if (!Config.Instance.AutoPostGameResult)
                 return;
@@ -238,14 +247,20 @@ namespace TwitchPlugin
             var deck = DeckList.Instance.ActiveDeck;
             if (deck.IsArenaDeck)
             {
-                Core.Send(string.Format("{0} gegen {1} ({2}) nach {3}. Aktuelle Arena: {4}", winStreak, _lastGame.OpponentName, _lastGame.OpponentHero,
+                var message = (string.Format("{0} gegen {1} ({2}) nach {3}. Aktuelle Arena: {4}", winStreak, _lastGame.OpponentName, _lastGame.OpponentHero,
                                     _lastGame.Duration, deck.WinLossString));
             }
             else
             {
-                Core.Send(string.Format("{0} gegen {1} ({2}) nach {3} mit {5}: {4}", winStreak, _lastGame.OpponentName, _lastGame.OpponentHero,
+                var message = (string.Format("{0} gegen {1} ({2}) nach {3} mit {5}: {4}", winStreak, _lastGame.OpponentName, _lastGame.OpponentHero,
                                     _lastGame.Duration, deck.WinLossString, deck.Name));
             }
+            if(Config.Instance.AutoPostDelay > 0)
+            {
+                Logger.WriteLine(string.Format("Waiting {0} seconds before posting game result...", Config.Instance.AutoPostDelay), "TwitchPlugin");
+				await Task.Delay(Config.Instance.AutoPostDelay * 1000);
+            }
+			Core.Send(message);
             _lastGame = null;
         }
 
@@ -285,4 +300,5 @@ namespace TwitchPlugin
             Core.Send("Noch nicht fertig, sorry!");
         }
     }
+>>>>>>> german
 }
