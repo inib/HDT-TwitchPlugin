@@ -6,7 +6,7 @@
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:twitchPlugin="clr-namespace:TwitchPlugin"
                       WindowStyle="ToolWindow" Title="SETTINGS" BorderBrush="{DynamicResource AccentColorBrush}"
-                      mc:Ignorable="d" Width="513" Height="624">
+                      mc:Ignorable="d" Width="550" Height="690">
     <controls:MetroWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

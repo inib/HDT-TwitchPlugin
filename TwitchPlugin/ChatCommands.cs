@@ -242,14 +242,15 @@ namespace TwitchPlugin
                                 ? string.Format("{0}! {1}. Sieg in Folge", GetKillingSpree(_winStreak), _winStreak)
                                 : ResultReplace(_lastGame.Result);
             var deck = DeckList.Instance.ActiveDeck;
+            string message = "";
             if (deck.IsArenaDeck)
             {
-                var message = (string.Format("{0} gegen {1} ({2}) nach {3}. Aktuelle Arena: {4}", winStreak, _lastGame.OpponentName, _lastGame.OpponentHero,
+                message = (string.Format("{0} gegen {1} ({2}) nach {3}. Aktuelle Arena: {4}", winStreak, _lastGame.OpponentName, _lastGame.OpponentHero,
                                     _lastGame.Duration, deck.WinLossString));
             }
             else
             {
-                var message = (string.Format("{0} gegen {1} ({2}) nach {3} mit {5}: {4}", winStreak, _lastGame.OpponentName, _lastGame.OpponentHero,
+                message = (string.Format("{0} gegen {1} ({2}) nach {3} mit {5}: {4}", winStreak, _lastGame.OpponentName, _lastGame.OpponentHero,
                                     _lastGame.Duration, deck.WinLossString, deck.Name));
             }
             if(Config.Instance.AutoPostDelay > 0)
