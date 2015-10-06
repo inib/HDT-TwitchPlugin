@@ -1,11 +1,8 @@
 ﻿#region
 using System;
 using System.Linq;
-<<<<<<< HEAD
 using System.Threading.Tasks;
-=======
 using System.Globalization;
->>>>>>> german
 using Hearthstone_Deck_Tracker;
 using Hearthstone_Deck_Tracker.Enums;
 using Hearthstone_Deck_Tracker.Hearthstone;
@@ -300,5 +297,4 @@ namespace TwitchPlugin
             Core.Send("Noch nicht fertig, sorry!");
         }
     }
->>>>>>> german
 }
