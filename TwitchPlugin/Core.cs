@@ -71,7 +71,7 @@ namespace TwitchPlugin
 		{
 			if(_irc == null)
 				return;
-			_irc.SendMessage(Config.Instance.Channel, message);
+			_irc.SendMessage(Config.Instance.Channel.ToLower(), message);
 			Logger.WriteLine(message, "TwitchPlugin");
 		}
 
@@ -82,7 +82,7 @@ namespace TwitchPlugin
 			var success = _irc.Connect("irc.twitch.tv", 6667);
 			if(success)
 			{
-				_irc.JoinChannel(Config.Instance.Channel);
+				_irc.JoinChannel(Config.Instance.Channel.ToLower());
 				_irc.OnChatMsg += HandleChatMessage;
 				Send("Servus! (Hearthstone Deck Tracker connected)");
 			}
@@ -105,8 +105,8 @@ namespace TwitchPlugin
 		{
 			if(_irc != null && _irc.Connected)
 			{
-				Send("Wiederschaun! (Hearthstone Deck Tracker disconnected)");
-				_irc.LeaveChannel(Config.Instance.Channel);
+				Send("Bye! (Hearthstone Deck Tracker disconnected)");
+				_irc.LeaveChannel(Config.Instance.Channel.ToLower());
 				_irc.Quit();
 			}
 		}

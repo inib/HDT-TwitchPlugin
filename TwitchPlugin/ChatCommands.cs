@@ -203,10 +203,10 @@ namespace TwitchPlugin
             }
         }
 
-        public static void HdtCommand()
-        {
-            Core.Send(string.Format("Hearthstone Deck Tracker: https://github.com/Epix37/Hearthstone-Deck-Tracker/releases"));
-        }
+		public static void HdtCommand()
+		{
+			Core.Send(string.Format("Hearthstone Deck Tracker: http://hsdecktracker.net"));
+		}
 
         public static void OnGameEnd()
         {
