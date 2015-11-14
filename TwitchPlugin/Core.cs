@@ -105,7 +105,7 @@ namespace TwitchPlugin
 		{
 			if(_irc != null && _irc.Connected)
 			{
-				Send("Bye! (Hearthstone Deck Tracker disconnected)");
+				Send("Wiederschaun! (Hearthstone Deck Tracker disconnected)");
 				_irc.LeaveChannel(Config.Instance.Channel.ToLower());
 				_irc.Quit();
 			}

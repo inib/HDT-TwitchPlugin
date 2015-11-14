@@ -238,6 +238,9 @@ namespace TwitchPlugin
                 return;
             if (_lastGame == null)
                 return;
+            if (DeckList.Instance.ActiveDeck == null)
+                return;
+
             var winStreak = _winStreak > 2
                                 ? string.Format("{0}! {1}. Sieg in Folge", GetKillingSpree(_winStreak), _winStreak)
                                 : ResultReplace(_lastGame.Result);
